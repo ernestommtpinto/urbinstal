@@ -86,7 +86,7 @@ function Header() {
 }
 
 function Hero() {
-  return <section id="home" className="hero-section"><Container><Row className="align-items-center g-5"><Col lg={6} className="reveal hero-copy"><h1>Engenharia elétrica para projetos que exigem confiança.</h1><p>Infraestruturas elétricas, urbanizações, instalações industriais, iluminação pública, energias renováveis e manutenção com rigor técnico, segurança e compromisso.</p></Col><Col lg={6} className="reveal"><div className="hero-photo"><img src="/assets/homepage.png" alt="Infraestruturas elétricas Urbinstal" loading="lazy" /></div></Col></Row></Container></section>;
+  return <section id="home" className="hero-section"><Container><Row className="align-items-center g-5"><Col lg={6} className="reveal hero-copy"><h1>Soluções elétricas para infraestruturas, indústria e urbanizações.</h1><p>Projetos, execução e manutenção de redes elétricas, iluminação pública, ITUR, instalações industriais e energias renováveis com rigor técnico, segurança e compromisso.</p></Col><Col lg={6} className="reveal"><div className="hero-photo"><img src="/assets/homepage.png" alt="Infraestruturas elétricas Urbinstal" loading="lazy" /></div></Col></Row></Container></section>;
 }
 
 function Counters() {
