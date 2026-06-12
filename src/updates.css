@@ -1,0 +1,96 @@
+/* Correções finais: hero sem botões grandes e contactos sem ícones internos */
+.hero-actions{
+  display:none !important;
+}
+
+.contact-card .d-grid{
+  display:none !important;
+}
+
+/* Remover completamente os ícones dentro da caixa de contactos */
+.contact-quick-icons,
+.contact-round-icon{
+  display:none !important;
+}
+
+.mobile-direct-phone{
+  display:none !important;
+}
+
+/* Barra flutuante lateral: telefone + WhatsApp */
+.mobile-call{
+  background:linear-gradient(135deg,#e51f2f,#b90f1c) !important;
+}
+
+.mobile-whatsapp{
+  background:linear-gradient(135deg,#25D366,#128C7E) !important;
+}
+
+.mobile-contact-bar svg{
+  display:block;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.18));
+}
+
+.mobile-contact-bar{
+  position:fixed !important;
+  right:18px !important;
+  bottom:18px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  gap:11px !important;
+  background:transparent !important;
+  padding:0 !important;
+  box-shadow:none !important;
+  border:0 !important;
+  z-index:9999 !important;
+}
+
+.mobile-call,
+.mobile-whatsapp{
+  width:54px !important;
+  height:54px !important;
+  min-width:54px !important;
+  border-radius:999px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  color:#fff !important;
+  text-decoration:none !important;
+  font-size:0 !important;
+  padding:0 !important;
+  box-shadow:0 12px 26px rgba(0,0,0,.24) !important;
+  transition:transform .22s ease, box-shadow .22s ease !important;
+}
+
+.mobile-call:hover,
+.mobile-whatsapp:hover{
+  transform:translateY(-3px) scale(1.04) !important;
+  box-shadow:0 16px 34px rgba(0,0,0,.30) !important;
+}
+
+.mobile-call svg,
+.mobile-whatsapp svg{
+  width:23px !important;
+  height:23px !important;
+}
+
+@media(max-width:768px){
+  .mobile-contact-bar{
+    right:14px !important;
+    bottom:14px !important;
+    gap:9px !important;
+  }
+
+  .mobile-call,
+  .mobile-whatsapp{
+    width:46px !important;
+    height:46px !important;
+    min-width:46px !important;
+  }
+
+  .mobile-call svg,
+  .mobile-whatsapp svg{
+    width:21px !important;
+    height:21px !important;
+  }
+}
