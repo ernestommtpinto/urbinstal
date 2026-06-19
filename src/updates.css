@@ -95,6 +95,10 @@
   }
 }
 
+/* =========================
+   TEMA PROFISSIONAL URBINSTAL
+   Navbar e hero com fundo contínuo, vermelho só como destaque
+   ========================= */
 :root{
   --red:#e51f2f;
   --red-dark:#b81020;
@@ -107,7 +111,7 @@
 }
 
 body{
-  background:#dcb8b8 !important;
+  background:#050b18 !important;
 }
 
 .site-nav{
@@ -125,7 +129,12 @@ body{
 }
 
 .hero-section::after{
-  display:none !important;
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:120px;
+  background:linear-gradient(180deg, rgba(5,11,24,0), #050b18 90%);
+  pointer-events:none;
 }
 
 .hero-section .container{
@@ -257,54 +266,307 @@ footer{
 }
 
 
-/* Navbar preta + Hero branco */
-body{background:#ffffff !important;}
+/* =========================
+   Ajustes finais: obras, mobile e hero branco
+   ========================= */
+
+body{
+  background:#ffffff !important;
+}
+
 .site-nav{
   background:#05070d !important;
   backdrop-filter:none !important;
+  border-bottom:1px solid rgba(255,255,255,.08) !important;
 }
+
 .hero-section{
   background:#ffffff !important;
   color:#101828 !important;
-  border-bottom:1px solid #eef2f6;
+  border-bottom:1px solid #eef2f6 !important;
+  box-shadow:none !important;
 }
-.hero-section h1{color:#101828 !important;}
-.hero-section p{color:#475467 !important;}
+
+.hero-section::before,
+.hero-section::after{
+  display:none !important;
+  content:none !important;
+  background:none !important;
+}
+
+.stats-band{
+  background:#ffffff !important;
+}
+
+.hero-section h1{
+  color:#101828 !important;
+  font-size:42px !important;
+  line-height:1.12 !important;
+  letter-spacing:-0.035em !important;
+  max-width:680px !important;
+  margin-bottom:32px !important;
+  text-shadow:none !important;
+}
+
+.hero-section p{
+  color:#475467 !important;
+  margin-top:0 !important;
+  max-width:760px !important;
+  line-height:1.7 !important;
+}
+
 .hero-copy:before{
   display:block !important;
   background:#e51f2f !important;
 }
 
-.hero-section h1{
-  font-size:42px !important;
-  line-height:1.12 !important;
-  letter-spacing:-0.035em !important;
-  max-width:680px !important;
+.work-thumb{
+  display:none !important;
 }
 
 @media(max-width:991px){
-  .hero-section h1{
-    font-size:38px !important;
+  .works-slider{
+    padding:16px !important;
+    border-radius:24px !important;
+  }
+
+  .works-slider .row{
+    gap:18px !important;
+  }
+
+  .work-image img{
+    height:300px !important;
+    border-radius:20px !important;
+  }
+
+  .works-slider h3{
+    font-size:28px !important;
+    line-height:1.15 !important;
+    margin-top:4px !important;
+    margin-bottom:12px !important;
+  }
+
+  .works-slider p{
+    font-size:16px !important;
+    line-height:1.55 !important;
+    margin-bottom:22px !important;
+  }
+
+  .works-slider .btn-red{
+    display:inline-flex !important;
+    width:auto !important;
+    min-width:190px !important;
+    justify-content:center !important;
+    margin-bottom:28px !important;
+  }
+
+  .carousel-indicators{
+    position:relative !important;
+    margin-top:10px !important;
+    margin-bottom:0 !important;
+    bottom:auto !important;
   }
 }
 
 @media(max-width:575px){
   .hero-section h1{
     font-size:32px !important;
+    line-height:1.14 !important;
+    max-width:100% !important;
+    margin-bottom:24px !important;
+  }
+
+  .hero-section p{
+    font-size:16px !important;
+    line-height:1.65 !important;
+  }
+
+  .work-image img{
+    height:220px !important;
+    border-radius:18px !important;
+  }
+
+  .works-slider{
+    padding:14px !important;
+    overflow:hidden !important;
+  }
+
+  .works-slider h3{
+    font-size:24px !important;
+  }
+
+  .works-slider p{
+    font-size:15px !important;
+  }
+
+  .works-slider .btn-red{
+    min-width:0 !important;
+    width:100% !important;
+    margin-bottom:22px !important;
   }
 }
 
 
-.hero-section h1{
-  font-size:42px !important;
-  line-height:1.12 !important;
-  letter-spacing:-0.035em !important;
-  max-width:680px !important;
-  margin-bottom:32px !important;
+/* Corrigir indicadores do carrossel: nunca por cima da imagem */
+.works-slider .carousel-indicators{
+  position:static !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:8px !important;
+  margin:22px 0 0 0 !important;
+  padding:0 !important;
+  transform:none !important;
 }
 
-.hero-section p{
-  margin-top:0 !important;
-  max-width:760px !important;
-  line-height:1.7 !important;
+.works-slider .carousel-indicators [data-bs-target]{
+  width:42px !important;
+  height:4px !important;
+  border:0 !important;
+  border-radius:999px !important;
+  background-color:rgba(255,255,255,.45) !important;
+  opacity:1 !important;
+}
+
+.works-slider .carousel-indicators .active{
+  background-color:#ffffff !important;
+}
+
+.works-slider .carousel-control-prev,
+.works-slider .carousel-control-next{
+  top:42% !important;
+  bottom:auto !important;
+  transform:translateY(-50%) !important;
+}
+
+
+/* =========================
+   FINAL: remover grelha duplicada, ícones flutuantes e corrigir carrossel
+   ========================= */
+
+/* Esconder sempre a grelha duplicada de obras */
+.work-thumb{
+  display:none !important;
+}
+
+/* Remover ícones flutuantes laterais */
+.mobile-contact-bar{
+  display:none !important;
+}
+
+/* Indicadores do carrossel nunca por cima da imagem/texto */
+.works-slider .carousel-indicators{
+  position:static !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:8px !important;
+  margin:24px 0 0 0 !important;
+  padding:0 !important;
+  transform:none !important;
+  z-index:1 !important;
+}
+
+.works-slider .carousel-indicators [data-bs-target]{
+  width:42px !important;
+  height:4px !important;
+  border:0 !important;
+  border-radius:999px !important;
+  background-color:rgba(255,255,255,.45) !important;
+  opacity:1 !important;
+}
+
+.works-slider .carousel-indicators .active{
+  background-color:#ffffff !important;
+}
+
+.works-slider .btn-red{
+  position:relative !important;
+  z-index:2 !important;
+}
+
+/* Desktop: setas centradas na imagem */
+.works-slider .carousel-control-prev,
+.works-slider .carousel-control-next{
+  top:42% !important;
+  bottom:auto !important;
+  transform:translateY(-50%) !important;
+}
+
+/* Tablet e mobile: layout vertical sem sobreposições */
+@media(max-width:991px){
+  .works-slider{
+    padding:16px !important;
+    border-radius:24px !important;
+    overflow:hidden !important;
+  }
+
+  .works-slider .carousel-item .row{
+    display:block !important;
+  }
+
+  .works-slider .carousel-item .col-lg-7,
+  .works-slider .carousel-item .col-lg-5{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .work-image img{
+    height:300px !important;
+    border-radius:20px !important;
+  }
+
+  .works-slider h3{
+    font-size:28px !important;
+    line-height:1.15 !important;
+    margin-top:22px !important;
+    margin-bottom:12px !important;
+  }
+
+  .works-slider p{
+    font-size:16px !important;
+    line-height:1.55 !important;
+    margin-bottom:22px !important;
+  }
+
+  .works-slider .btn-red{
+    width:auto !important;
+    min-width:190px !important;
+    justify-content:center !important;
+    margin-bottom:0 !important;
+  }
+
+  .works-slider .carousel-control-prev,
+  .works-slider .carousel-control-next{
+    top:34% !important;
+  }
+}
+
+@media(max-width:575px){
+  .work-image img{
+    height:220px !important;
+    border-radius:18px !important;
+  }
+
+  .works-slider{
+    padding:14px !important;
+  }
+
+  .works-slider h3{
+    font-size:24px !important;
+  }
+
+  .works-slider p{
+    font-size:15px !important;
+  }
+
+  .works-slider .btn-red{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  .works-slider .carousel-control-prev,
+  .works-slider .carousel-control-next{
+    top:28% !important;
+  }
 }
